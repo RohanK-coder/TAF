@@ -25,6 +25,7 @@ export default function signup() {
                         <input class="flip-card__input" placeholder="Name" type="name"/>
                         <input class="flip-card__input" name="email" placeholder="Email" type="email"/>
                         <input class="flip-card__input" name="password" placeholder="Password" type="password"/>
+                        <input class="flip-card__input" name="vorc" placeholder="Vendor or Customer" type="vorc"/>
                         <button class="flip-card__btn">Confirm!</button>
                      </form>
                   </div>
