@@ -16,9 +16,7 @@ app.post("/login", async (req, res) => {
         // console.log(check)
         if (check) {
             const mail = { email };
-            const accessToken = jwt.sign(mail, 'your-secret-key');
-            console.log(accessToken);
-            
+            const accessToken = jwt.sign(mail, 'your-secret-key');            
             res.json({ status: "exist", accessToken: accessToken, username: check.username });
         } else {
             res.json({ status: "notexist" });
@@ -36,9 +34,7 @@ app.post("/logout", (req, res) => {
   
 
 app.post("/signup", async (req, res) => {
-    console.log(req.body);
 const { username, email, password, vorc } = req.body;
-console.log(username, email, password, vorc);
 
 try {
     const existingUser = await collection.findOne({

@@ -20,10 +20,7 @@ export default function Signup() {
         vorc
       });
 
-      console.log(response);
-
       if (response.data.message === "success") {
-        console.log("Signed up successfully!");
         window.location.reload(); // Consider using React state to update UI instead
       } else {
         alert("User already exists");
@@ -43,10 +40,7 @@ export default function Signup() {
         password
       });
 
-      console.log(response);
-
       if (response.data.status === "exist") {
-        console.log("Logged in successfully!");
         localStorage.setItem('accessToken', response.data.accessToken);
         localStorage.setItem('username', response.data.username);
 
