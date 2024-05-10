@@ -21,6 +21,7 @@ export default function Signup() {
       });
 
       if (response.data.message === "success") {
+        alert("Signup Successful");
         window.location.reload(); // Consider using React state to update UI instead
       } else {
         alert("User already exists");
