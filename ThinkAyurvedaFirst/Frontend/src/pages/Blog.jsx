@@ -226,7 +226,7 @@ export default function Blog() {
     </Carousel>
         </div>
         <div className="bg-white">
-        <ul className='flex items-center justify-center flex-wrap gap-10 mb-8'>{blogMainItems}</ul>
+        <ul className='flex items-start justify-start flex-wrap gap-10 mb-8'>{blogMainItems}</ul>
       
         </div>
           <Pagination/>

@@ -1,7 +1,9 @@
 import React from 'react'
+import { useRef } from 'react';
 import Logo from '../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
 export default function Header() {
+  const passionRef = useRef();
   const navigate = useNavigate(); 
     const handleClick = () => navigate('/signup'); 
     const handleShop = () => navigate('/shop');
@@ -58,7 +60,17 @@ export default function Header() {
     </ul>
   </div>
   </div>
+  {/* <div className='inner-box'>
+            <ul className='flex items-center justify-center gap-5 cursor-pointer'>
+              <li>Passion</li>
+              <li>Introduction</li>
+              <li>What we do</li>
+              <li>Testimonials</li>
+              <li>Our Doctors</li>
+            </ul>
+    </div> */}
+  
 </nav>
-    </>
+    </> 
   )
 }
