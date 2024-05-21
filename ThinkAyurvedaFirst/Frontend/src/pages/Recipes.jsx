@@ -404,7 +404,7 @@ export default function Recipes() {
        </div>
        <div className='recipes-cards'>
        {recipes.map(item=>(
-        <Card className="mt-6 w-72">
+        <Card className="mt-6 w-64">
         <CardHeader color="blue-gray" className="relative h-36">
           <img
             src={item.imgLink}
@@ -419,7 +419,7 @@ export default function Recipes() {
             type : {item.type}
           </Typography>
           <Typography variant='p'>
-            {item.description.slice(0,100).concat(".....")}
+            {item.description.slice(0,30).concat(".....")}
           </Typography>
         </CardBody>
         <CardFooter className="pt-0">

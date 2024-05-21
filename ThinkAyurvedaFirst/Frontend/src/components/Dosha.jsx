@@ -17,9 +17,14 @@ import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Dosha() {
   const [date, setDate] = useState(new Date());
+  const navigate = useNavigate();
+  const next = () => {
+    navigate('/doshaquiz')
+  }
 
   return (
     <div className='dosha-home'>
@@ -33,7 +38,7 @@ export default function Dosha() {
       </Typography>
       <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
         <div className="mb-1 flex flex-col gap-6">
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
+          <Typography variant="h6" color="blue-gray" className="-mb-3" aria-required>
             Your Full Name
           </Typography>
           <Input
@@ -42,12 +47,13 @@ export default function Dosha() {
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
             labelProps={{
               className: "before:content-none after:content-none",
-            }}
+            }} required
           />
           <Typography variant="h6" color="blue-gray" className="-mb-3">
             Your Email
           </Typography>
           <Input
+          required
             size="lg"
             placeholder="name@mail.com"
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -124,7 +130,7 @@ export default function Dosha() {
     </div>
         </div>
         
-        <Button className="mt-6" fullWidth>
+        <Button className="mt-6" fullWidth onClick={next}>
           Start Quiz
         </Button>
         

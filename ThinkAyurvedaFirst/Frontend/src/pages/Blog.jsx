@@ -126,45 +126,73 @@ const products = [
 
   const blogMain = [
     {
-      heading: "UI/UX Review Check",
-      text:"The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-    },
-    {
-      heading: "UI/UX Review Check",
-      text:"The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-    },
-    {
-      heading: "UI/UX Review Check",
-      text:"The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-    },
-    {
-      heading: "UI/UX Review Check",
-      text:"The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-    },
-    {
-      heading: "UI/UX Review Check",
-      text:"The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-    },
-    {
-      heading: "UI/UX Review Check",
-      text:"The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to &quot;Naviglio&quot; where you can enjoy the main night life in Barcelona.",
-    },
+      heading:" Harnessing Ayurveda: Effective Remedies For Migraine Relief ",
+      description:"   Introduction: Migraines can be debilitating, affecting millions of people worldwide. While conventional medicine offers solutions, Ayurveda, the ancient Indian system of medicine, presents holistic approaches […]",
+      imgLink:"https://thinkayurvedafirst.com/wp-content/uploads/2024/03/5.jpg ",
+    },
+
+
+  {
+      heading: "Revolutionizing Healthcare: ThinkAyurvedaFirst Receives The 2024 Global C-Suite Communitys Innovative Company Award",
+      description:" We are ecstatic to share the incredible news that ThinkAyurvedaFirst™, under the leadership of our esteemed CEO Mr. Uppuluri Sreenivasa Sreekanth, has been bestowed with […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/HAR05804-scaled.jpg ",
+    },
+  {
+      heading:" Understanding Eczema From An Ayurvedic Perspective",
+      description:" Eczema, known as Vicharchika in Ayurveda, is a skin disorder that manifests as red, itchy, and inflamed patches on the skin. According to Ayurveda, eczema […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/eczema-types.webp ",
+    },
+  {
+      heading:" Embracing Menopause: An Ayurvedic Perspective And Natural Remedies For Transition",
+      description:" Introduction: Menopause is a profound transition in a woman’s life, marking the cessation of her reproductive years. This natural process, often accompanied by a range […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/menopause-hair-loss-blog.jpg",
+    },
+  {
+      heading:" Ayurveda: Nurturing Kidney Health Through Ancient Wisdom And Modern Understanding",
+      description:" Introduction: In our journey towards holistic health, the kidneys play an indispensable role. These bean-shaped organs filter waste products, regulate electrolyte balance, and maintain fluid […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/Ensuring-kidney-health-is-important-for-optimum-wellbeing.png ",
+    },
+  {
+      heading:" “Unlocking Ayurvedic Insights: A Holistic Approach To Type 2 Diabetes Management”",
+      description:" Introduction: In the realm of traditional medicine, Ayurveda stands as a beacon of holistic healing, offering profound insights into the interconnectedness of body, mind, and […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/05/a5c482b2-c51e-4b17-b4e0-0639104b1e99-1.jpg ",
+    },
+  {
+      heading:" “Ageless Wisdom: Ayurvedic Strategies For Graceful Aging”",
+      description:" Introduction: In a world where the pursuit of eternal youth seems to be never-ending, ancient wisdom offers a profound perspective on aging gracefully. Rooted in […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/beauty-1000x531-1.jpg ",
+    },
+  {
+      heading:" Ayurvedic Approach To Managing Rheumatoid Arthritis: A Comprehensive Guide",
+      description:" Introduction: Rheumatoid Arthritis (RA) is a chronic autoimmune disorder that primarily affects the joints, leading to inflammation, pain, stiffness, and eventually joint damage. While modern […]",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/05/5964859-scaled.jpg ",
+    },
+  {
+      heading:" Approach To Childhood Developmental Disorders: Ayurvedic Insights And Therapies",
+      description:" Introduction: Childhood developmental disorders, including autism spectrum disorders (ASD), attention deficit hyperactivity disorder (ADHD), and developmental delays, pose unique challenges for both children and their […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/40d6960524dd7662ca10f9ddf8e221a1.jpg ",
+    },
+  {
+      heading:" “Holistic Cancer Support: Ayurvedic Perspectives On Alleviating Side Effects, Enhancing Well-Being, And Integrating Care”",
+      description:" Introduction: In the realm of cancer care, Ayurveda offers a holistic approach that focuses on restoring balance to the body, alleviating side effects of treatment, […] ",
+      imgLink:" https://thinkayurvedafirst.com/wp-content/uploads/2024/05/ayurveda.jpg ",
+    },
   ] 
   const blogMainItems = blogMain.map(card => 
     <li>
       <Card className="mt-8 w-72">
-      <CardHeader color="blue-gray" className="relative h-45">
+      <CardHeader color="blue-gray" className="relative h-36">
         <img
-          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          src={card.imgLink}
           alt="card-image"
         />
       </CardHeader>
       <CardBody>
         <Typography variant="h5" color="blue-gray" className="mb-2">
-          {card.heading}
+          {card.heading.slice(0,60).concat("...")}
         </Typography>
         <Typography>
-          {card.text}
+          {card.description.slice(0,100).concat("...")}
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
@@ -193,7 +221,7 @@ export default function Blog() {
         <div className='shop2'>
         <div className='carousel'>
           <Carousel
-      className="rounded-xl mt-5"
+      className="rounded-xl mt-5 mr-5"
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
@@ -209,17 +237,17 @@ export default function Blog() {
       )}
     >
       <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        src=" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/HAR05804-scaled.jpg "
         alt="image 1"
         className="h-full w-full object-cover"
       />
       <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+        src=" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/menopause-hair-loss-blog.jpg"
         alt="image 2"
         className="h-full w-full object-cover"
       />
       <img
-        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
+        src=" https://thinkayurvedafirst.com/wp-content/uploads/2024/04/Ensuring-kidney-health-is-important-for-optimum-wellbeing.png "
         alt="image 3"
         className="h-full w-full object-cover"
       />

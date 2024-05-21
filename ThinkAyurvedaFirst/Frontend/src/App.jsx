@@ -18,6 +18,8 @@ import Vegetarian from './components/Recipes/Vegetarian'
 import Vata from './components/Recipes/Vata'
 import Pitta from './components/Recipes/Pitta'
 import Kapha from './components/Recipes/Kapha'
+import HomeTest from './pages/HomeTest'
+import DoshaQuiz from './components/DoshaQuiz'
 
 
 function App() {
@@ -29,14 +31,14 @@ function App() {
       <BrowserRouter>
       <Header/> 
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<HomeTest/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/shop' element={<Shop/>}/>
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/recipes' element={<Recipes/>}/>
         <Route path='/dosha' element={<DoshaStart/>}/>
         <Route path='/doshaNext' element={<Dosha/>}/>
-        <Route path='/test' element={<InsideNav/>}/>
+        <Route path='/doshaquiz' element={<DoshaQuiz/>}/>
         <Route path='/vegan' element={<Vegan/>}/>
         <Route path='/glutenfree' element={<GlutenFree/>}/>
         <Route path='/veg' element={<Vegetarian/>}/>
