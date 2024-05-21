@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Card,
   Input,
@@ -18,9 +18,12 @@ import { DayPicker } from "react-day-picker";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext} from './AppContext';
 
 export default function Dosha() {
   const [date, setDate] = useState(new Date());
+  const {name,setName} = useContext(AppContext);
+  
   const navigate = useNavigate();
   const next = () => {
     navigate('/doshaquiz')
@@ -30,7 +33,7 @@ export default function Dosha() {
     <div className='dosha-home'>
       <div className='glass'>
       <Card color="transparent" shadow={false}>
-      <Typography variant="h4" color="blue-gray">
+      <Typography variant="h4" color="black">
         Dosha Quiz
       </Typography>
       <Typography color="gray" className="mt-1 font-normal">
@@ -38,7 +41,7 @@ export default function Dosha() {
       </Typography>
       <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
         <div className="mb-1 flex flex-col gap-6">
-          <Typography variant="h6" color="blue-gray" className="-mb-3" aria-required>
+          <Typography variant="h6" color="black" className="-mb-3" aria-required>
             Your Full Name
           </Typography>
           <Input
@@ -47,7 +50,10 @@ export default function Dosha() {
             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
             labelProps={{
               className: "before:content-none after:content-none",
-            }} required
+            }}
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            color='black'
           />
           <Typography variant="h6" color="blue-gray" className="-mb-3">
             Your Email
@@ -60,6 +66,7 @@ export default function Dosha() {
             labelProps={{
               className: "before:content-none after:content-none",
             }}
+
           />
           <Typography variant="h6" color="blue-gray" className="-mb-3">
             How do you identify?

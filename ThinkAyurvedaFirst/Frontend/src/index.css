@@ -523,7 +523,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .dosha-home{
-  background-color: rgba(174, 172, 172, 0.625);
+  background-image: url('./assets/page-pitta.jpg');
   width: 100%;
   height: 97vh;
   background-size: cover;
@@ -616,6 +616,7 @@ margin-top: 30px;
   width: 100%;
   height: auto;
   
+  
 }
 .vata{
   
@@ -628,4 +629,85 @@ margin-top: 30px;
   justify-content: start;
   padding-top: 40px;
   flex-direction: column;
+}
+.page{
+  width: 100%;
+  height: auto;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.middle{
+  
+  width: 40%;
+  height: 59vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.side{
+  width: 20%;
+  height: 59vh;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  
+}
+.info{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.doshKapha{
+  background-image: url('./assets/page-background.jpg');
+  background-size: cover;
+}
+.doshPitta{
+  background-image: url('./assets/page-pitta.jpg');
+  background-size: cover;
+
+}
+.doshVata{
+  background-image: url('./assets/page-vata.jpg');
+  background-size: cover;
+
+}
+.scores{
+  background: rgba( 63, 112, 7, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7px );
+-webkit-backdrop-filter: blur( 7px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.trait{
+  width: 90%;
+  height: 17vh;
+  border: 5px solid green;
+  display: flex;
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 5px;
+}
+.trait1{
+  height: 100%;
+  width: 30%;
+   
+}
+.trait2{
+  height: 100%;
+  width: 100%;
+  
+  overflow: hidden;
 }

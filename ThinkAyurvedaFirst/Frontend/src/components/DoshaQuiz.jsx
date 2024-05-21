@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Checkbox } from "@material-tailwind/react";
 import { Radio } from "@material-tailwind/react";
 import { Button } from "@material-tailwind/react";
+import { AppContext } from './AppContext';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function DoshaQuiz() {
+    
+    
+    const {vatascore,SetVataScore} = useContext(AppContext)
+    const {pittascore,SetPittaScore} = useContext(AppContext)
+    const {kaphascore,SetKaphaScore} = useContext(AppContext)
+    const navigate = useNavigate();
+    
+    const handleSubmit = () => {
+        if(vatascore>kaphascore && vatascore>pittascore){
+            navigate('/vatapage')
+        }
+        else if(pittascore>vatascore && pittascore>kaphascore){
+            navigate('/pittapage')
+        }
+        else{
+            navigate('/kaphapage')
+        }
+    }
+   
     const vataQuestions = [
         {
             question:"My skin tends to be dry and rough.",
@@ -82,10 +104,7 @@ export default function DoshaQuiz() {
             question: "I enjoy challenges and often seek out competitive activities.",
             name:"nine",
         },
-        {
-            question: "I can be critical of myself and others when things do not meet my expectations.",
-            name:"ten",
-        },
+        
     ]
     const kaphaQuestions = [
         {
@@ -131,13 +150,11 @@ export default function DoshaQuiz() {
             <h1 className='text-2xl text-lime-200 mb-4 opacity-50'>{item.question}</h1>
             <div className="flex gap-10">
                 <p>Agree</p>
-                <Radio name={item.name} color='green'/>
-                <Radio name={item.name} color="gray" />
-                <Radio name={item.name} color="blue" />
-                <Radio name={item.name} color="yellow" />
-                <Radio name={item.name} color="pink" />
-                <Radio name={item.name} color="amber" />
-                <Radio name={item.name} color="red" />
+                <Radio name={item.name} color='green' onChange={()=>SetVataScore(vatascore+5)}/>
+                <Radio name={item.name} color="gray" onChange={()=>SetVataScore(vatascore+4)}/>
+                <Radio name={item.name} color="blue" onChange={()=>SetVataScore(vatascore+3)}/>
+                <Radio name={item.name} color="yellow" onChange={()=>SetVataScore(vatascore+2)}/>
+                <Radio name={item.name} color="red" onChange={()=>SetVataScore(vatascore+1)}/>
                 <p>Disagree</p>
             </div>
         </li>
@@ -147,13 +164,12 @@ export default function DoshaQuiz() {
             <h1 className='text-2xl text-lime-200 mb-4 opacity-50'>{item.question}</h1>
             <div className="flex gap-10">
                 <p>Agree</p>
-                <Radio name={item.name} color='green'/>
-                <Radio name={item.name} color="gray" />
-                <Radio name={item.name} color="blue" />
-                <Radio name={item.name} color="yellow" />
-                <Radio name={item.name} color="pink" />
-                <Radio name={item.name} color="amber" />
-                <Radio name={item.name} color="red" />
+                <Radio name={item.name} color='green' onChange={()=>SetPittaScore(pittascore+5)}/>
+                <Radio name={item.name} color="gray" onChange={()=>SetPittaScore(pittascore+4)}/>
+                <Radio name={item.name} color="blue" onChange={()=>SetPittaScore(pittascore+3)}/>
+                <Radio name={item.name} color="yellow" onChange={()=>SetPittaScore(pittascore+2)}/>
+                
+                <Radio name={item.name} color="red" onChange={()=>SetPittaScore(pittascore+1)}/>
                 <p>Disagree</p>
             </div>
         </li>
@@ -163,13 +179,12 @@ export default function DoshaQuiz() {
             <h1 className='text-2xl text-orange-800 mb-4 opacity-50'>{item.question}</h1>
             <div className="flex gap-10">
                 <p>Agree</p>
-                <Radio name={item.name} color='green'/>
-                <Radio name={item.name} color="gray" />
-                <Radio name={item.name} color="blue" />
-                <Radio name={item.name} color="yellow" />
-                <Radio name={item.name} color="pink" />
-                <Radio name={item.name} color="amber" />
-                <Radio name={item.name} color="red" />
+                <Radio name={item.name} color='green' onChange={()=>SetKaphaScore(kaphascore+5)}/>
+                <Radio name={item.name} color="gray"  onChange={()=>SetKaphaScore(kaphascore+4)}/>
+                <Radio name={item.name} color="blue"  onChange={()=>SetKaphaScore(kaphascore+3)}/>
+                <Radio name={item.name} color="yellow"  onChange={()=>SetKaphaScore(kaphascore+2)}/>
+                
+                <Radio name={item.name} color="red"  onChange={()=>SetKaphaScore(kaphascore+1)}/>
                 <p>Disagree</p>
             </div>
         </li>
@@ -190,7 +205,7 @@ export default function DoshaQuiz() {
         <ul className='flex items-center justify-center flex-col gap-24 mb-5 p-10 bg-gray-300 w-full'>
             {kaphaMapped}
         </ul>
-        <Button variant="gradient" className="rounded-full mb-5">
+        <Button variant="gradient" className="rounded-full mb-5" onClick={handleSubmit}>
         Submit Quiz
       </Button>
         </div>
