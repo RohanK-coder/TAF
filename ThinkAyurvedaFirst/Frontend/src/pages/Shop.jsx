@@ -15,7 +15,7 @@ const products = [
     {
       id: 2,
       name: 'Abhayarishta-Baidyanath-450ml',
-      href: '#',
+      href: '/shopsample',
       price: '₹170.00',
       imageSrc: 'https://thinkayurvedafirst.com/wp-content/uploads/2024/04/Baidyanath-Abhayarishta-Main-300x300.webp',
       imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',

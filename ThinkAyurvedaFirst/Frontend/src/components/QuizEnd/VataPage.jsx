@@ -8,7 +8,7 @@ export default function VataPage() {
     console.log(name)
   return (
     <>
-    <div className='doshVata pt-20'>
+    <div className='doshVata pt-24'>
     <p className='w-full text-3xl opacity-80 font-bold flex items-center justify-center mb-5'>{`${name}'s Dosha`}</p>
     
     <div className='page'>

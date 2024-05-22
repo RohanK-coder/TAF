@@ -23,6 +23,7 @@ import DoshaQuiz from './components/DoshaQuiz'
 import KaphaPage from './components/QuizEnd/KaphaPage'
 import VataPage from './components/QuizEnd/VataPage'
 import PittaPage from './components/QuizEnd/PittaPage'
+import ShopSample from './components/Samples/ShopSample'
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         <Route path='/kaphapage' element={<KaphaPage/>}/>
         <Route path='/pittapage' element={<PittaPage/>}/>
         <Route path='/vatapage' element={<VataPage/>}/>
+        <Route path='/shopsample' element={<ShopSample/>}/>
 
         
 
